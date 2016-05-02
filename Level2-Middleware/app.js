@@ -47,7 +47,7 @@ app.use(function(request, response, next){
  * **/
 //static middleware serving files from the public folder
 //app.get('/', function(request, response){
-//    response.sendFile(__dirname + "/public/index.html");
+//    response.sendFile(__dirname + "/public/scrap.html");
 //});
 
 //alternatively use express static middleware
