@@ -14,7 +14,26 @@
 
 <div class="panel panel-info">
     <div class="panel-heading">
-        <h3 class="panel-title">Block form</h3>
+        <h3 class="panel-title">New Block</h3>
+    </div>
+    <div class="panel-body">
+
+        <form>
+            <div class="input-group">
+                <span class="input-group-addon">Name</span>
+                <input type="text" name="name" class="form-control" placeholder="name">
+            </div>
+            <br/>
+
+            <div class="input-group">
+                <span class="input-group-addon">Description</span>
+                <input type="text" name="description" class="form-control" placeholder="description">
+            </div>
+            <br/>
+            <button type="submit" name="btn_submit" class="btn btn-success">
+                Save
+            </button>
+        </form>
     </div>
 </div>
 <div class="panel panel-primary">
@@ -27,11 +46,9 @@
 </div>
 
 
-
-
 <script src="jquery.min.js"></script>
 
 
-<script src="client.js" ></script>
+<script src="client.js"></script>
 </body>
 </html>
