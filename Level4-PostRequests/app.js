@@ -50,6 +50,12 @@ app.post('/blocks', parseUrlEncoded, function(request, response){
     response.status(201).json(block);
 });
 
+app.delete('/blocks/:name', function(request, response){
+    console.log()
+    delete blocks[request.blockName];
+    response.sendStatus(200);
+});
+
 app.listen(3000, function(){
     console.log('Ready...');
 });

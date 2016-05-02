@@ -47,6 +47,8 @@ app.get('/blocks/:name', function(request, response){
     }
 });
 
+
+
 app.get('/locations/:name', function(request, response){
     var desc = locations[request.blockName];
     if(!desc){
