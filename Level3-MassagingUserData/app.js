@@ -2,6 +2,8 @@ var express = require('express');
 var app = express();
 
 //sanitise data using a middleware block
+//maps dynamic route placeholders to callback functions,
+// for running pre-conditions on Dynamic Routes
 app.param('name', function(request, response, next){
 
     var name = request.params.name;
