@@ -8,13 +8,12 @@
 var express = require('express');
 
 var app = express();
-
-//app.get('/', function(request, response){
-//    response.sendFile(__dirname + "/public/index.html");
-//});
+var logger = require('./logger'); // custom middleware
 
 
-
+/**
+ * Stack middleware functions
+ * **/
 app.use(function(request, response, next){
 //do something
     console.log('A finished validation ');
@@ -34,16 +33,28 @@ app.use(function(request, response, next){
 });
 
 
-
+/**
+ * processing can be completed by route or middleware
+ **/
 //app.use(function(request, response, next){
-//  //processing can be completed by route or middleware
+//
 //    console.log('D finished whatever');
 //    response.send('done!');//ends it
 //});
 
+/**
+ * static middleware shipped with express
+ * **/
+//static middleware serving files from the public folder
+//app.get('/', function(request, response){
+//    response.sendFile(__dirname + "/public/index.html");
+//});
+
 //alternatively use express static middleware
 app.use(express.static('public'));
-//static middleware serving files from the public folder
+
+
+app.use(logger); // custom - see Morgan for prod ready logger
 
 app.get('/blocks', function(request, response){
     var blocks = ['Fixed', 'Movable', 'Rotating'];
